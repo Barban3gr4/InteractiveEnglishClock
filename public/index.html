@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive English Clock | Telling the Time</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>What time is it?</h1>
+        <p>Type a time to see how to say it in English</p>
+      </header>
+
+      <div class="clock-display">
+        <div class="clock-frame">
+          <div class="clock-face">
+            <div class="hand hour-hand" id="hourHand"></div>
+            <div class="hand min-hand" id="minHand"></div>
+            <div class="center-dot"></div>
+            <div class="markers">
+              <!-- Markers will be added via JS or just static for simplicity -->
+              <span class="marker marker-12">12</span>
+              <span class="marker marker-3">3</span>
+              <span class="marker marker-6">6</span>
+              <span class="marker marker-9">9</span>
+            </div>
+            <div class="zones">
+              <div class="zone past">PAST</div>
+              <div class="zone to">TO</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <div class="input-group">
+            <input type="time" id="timeInput" value="12:00" />
+            <label for="timeInput">Select Time</label>
+          </div>
+
+          <div class="translation-card" id="translationResult">
+            <div class="english-text" id="englishOutput">Twelve o'clock</div>
+            <div class="sub-text">It's...</div>
+          </div>
+        </div>
+      </div>
+
+      <section class="reference-grid">
+        <div class="ref-item" data-min="0">o'clock</div>
+        <div class="ref-item" data-min="15">quarter past</div>
+        <div class="ref-item" data-min="30">half past</div>
+        <div class="ref-item" data-min="45">quarter to</div>
+      </section>
+
+      <footer>
+        <p>Interactive English Learning Tool</p>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
