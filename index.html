@@ -19,59 +19,45 @@
         <p>Type a time to see how to say it in English</p>
       </header>
 
-      <div class="main-content">
-        <div class="clock-display">
-          <div class="clock-frame">
-            <div class="clock-face">
-              <div class="hand hour-hand" id="hourHand"></div>
-              <div class="hand min-hand" id="minHand"></div>
-              <div class="center-dot"></div>
-              <div class="markers" id="clockMarkers">
-                <!-- Markers and numbers will be added via JS -->
-              </div>
-              <div class="zones">
-                <div class="zone past">PAST</div>
-                <div class="zone to">TO</div>
-              </div>
+      <div class="clock-display">
+        <div class="clock-frame">
+          <div class="clock-face">
+            <div class="hand hour-hand" id="hourHand"></div>
+            <div class="hand min-hand" id="minHand"></div>
+            <div class="center-dot"></div>
+            <div class="markers" id="clockMarkers">
+              <!-- Markers and numbers will be added via JS -->
             </div>
-          </div>
-
-          <div class="controls">
-            <div class="input-group">
-              <input type="time" id="timeInput" value="12:00" />
-              <label for="timeInput">Select Time</label>
+            <div class="zones">
+              <div class="zone past">PAST</div>
+              <div class="zone to">TO</div>
             </div>
-
-            <div class="translation-card" id="translationResult">
-              <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                <div class="sub-text" style="margin-bottom: 0;">It's...</div>
-                <button id="speakBtn" class="speak-btn">
-                  <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.85 14,18.71V20.77C18.03,19.86 21,16.28 21,12C21,7.72 18.03,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16.02C15.5,15.29 16.5,13.77 16.5,12M3,9V15H7L12,20V4L7,9H3Z"></path></svg>
-                </button>
-              </div>
-              <div class="english-text" id="englishOutput">Twelve o'clock</div>
-            </div>
-
-            <section class="reference-grid">
-              <div class="ref-item" data-min="0">o'clock</div>
-              <div class="ref-item" data-min="15">quarter past</div>
-              <div class="ref-item" data-min="30">half past</div>
-              <div class="ref-item" data-min="45">quarter to</div>
-            </section>
           </div>
         </div>
 
-        <aside class="vocab-quiz">
-          <h2>Time Vocabulary</h2>
-          <p>Translate to Portuguese:</p>
-          <div class="quiz-container" id="quizContainer">
-            <!-- Quiz items will be added via JS -->
+        <div class="controls">
+          <div class="input-group">
+            <input type="time" id="timeInput" value="12:00" />
+            <label for="timeInput">Select Time</label>
           </div>
-          <div class="quiz-footer">
-            <button id="checkVocabBtn" class="check-btn">Check Answers</button>
-            <div id="quizScore" class="quiz-score"></div>
+
+          <div class="translation-card" id="translationResult">
+            <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <div class="sub-text" style="margin-bottom: 0;">It's...</div>
+              <button id="speakBtn" class="speak-btn">
+                <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.85 14,18.71V20.77C18.03,19.86 21,16.28 21,12C21,7.72 18.03,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16.02C15.5,15.29 16.5,13.77 16.5,12M3,9V15H7L12,20V4L7,9H3Z"></path></svg>
+              </button>
+            </div>
+            <div class="english-text" id="englishOutput">Twelve o'clock</div>
           </div>
-        </aside>
+
+          <section class="reference-grid">
+            <div class="ref-item" data-min="0">o'clock</div>
+            <div class="ref-item" data-min="15">quarter past</div>
+            <div class="ref-item" data-min="30">half past</div>
+            <div class="ref-item" data-min="45">quarter to</div>
+          </section>
+        </div>
       </div>
 
       <footer>
