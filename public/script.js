@@ -71,6 +71,18 @@ function updateClock() {
   englishOutput.textContent = convertTimeToEnglish(hours24, minutes);
 }
 
+function numberToWords(n) {
+  const units = [
+    "", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
+    "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"
+  ];
+  const tens = ["", "", "twenty", "thirty", "forty", "fifty"];
+
+  if (n < 20) return units[n];
+  const unit = n % 10;
+  return tens[Math.floor(n / 10)] + (unit !== 0 ? "-" + units[unit] : "");
+}
+
 function convertTimeToEnglish(h24, m) {
   let h = h24 % 12;
   if (h === 0) h = 12;
@@ -92,11 +104,14 @@ function convertTimeToEnglish(h24, m) {
   if (m === 50) return `Ten to ${numberWords[nextH]}`;
   if (m === 55) return `Five to ${numberWords[nextH]}`;
 
-  // For other minutes, provide a natural but flexible way
+  // For other minutes, provide a natural way with words
   if (m > 0 && m < 30) {
-    return `${m} minutes past ${numberWords[h]}`;
+    const minWord = numberToWords(m);
+    return `${capitalize(minWord)} ${m === 1 ? "minute" : "minutes"} past ${numberWords[h]}`;
   } else if (m > 30) {
-    return `${60 - m} minutes to ${numberWords[nextH]}`;
+    const minRemaining = 60 - m;
+    const minWord = numberToWords(minRemaining);
+    return `${capitalize(minWord)} ${minRemaining === 1 ? "minute" : "minutes"} to ${numberWords[nextH]}`;
   }
 
   return `${h}:${m.toString().padStart(2, "0")}`; // Fallback
