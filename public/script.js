@@ -21,18 +21,37 @@ const numberWords = [
 
 function createMarkers() {
   const face = document.querySelector(".clock-face");
+  const markersContainer = document.getElementById("clockMarkers");
+  
+  // Create ticks
   for (let i = 0; i < 60; i++) {
     const mark = document.createElement("div");
     mark.className = i % 5 === 0 ? "hour-mark" : "min-mark";
     mark.style.position = "absolute";
     mark.style.width = i % 5 === 0 ? "2px" : "1px";
-    mark.style.height = i % 5 === 0 ? "12px" : "6px";
-    mark.style.background = i % 5 === 0 ? "rgba(255,255,255,0.4)" : "rgba(255,255,255,0.1)";
+    mark.style.height = i % 5 === 0 ? "10px" : "5px";
+    mark.style.background = i % 5 === 0 ? "rgba(255,255,255,0.4)" : "rgba(255,255,255,0.15)";
     mark.style.left = "50%";
-    mark.style.top = "2px";
-    mark.style.transformOrigin = "50% 158px";
+    mark.style.top = "5px";
+    mark.style.transformOrigin = "50% 140px";
     mark.style.transform = `translateX(-50%) rotate(${i * 6}deg)`;
     face.appendChild(mark);
+  }
+
+  // Create numbers 1-12
+  for (let i = 1; i <= 12; i++) {
+    const number = document.createElement("span");
+    number.className = "marker";
+    number.textContent = i;
+    
+    // Position numbers in a circle
+    const angle = (i * 30) * (Math.PI / 180);
+    const radius = 115; // Distance from center
+    const x = Math.sin(angle) * radius;
+    const y = -Math.cos(angle) * radius;
+    
+    number.style.transform = `translate(${x}px, ${y}px)`;
+    markersContainer.appendChild(number);
   }
 }
 

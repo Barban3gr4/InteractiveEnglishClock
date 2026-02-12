@@ -187,29 +187,17 @@ header p {
 .marker {
   position: absolute;
   color: var(--text-dim);
-  font-weight: 600;
-  font-size: 1.2rem;
-}
-
-.marker-12 {
-  top: 10px;
+  font-weight: 800;
+  font-size: 1.1rem;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   left: 50%;
-  transform: translateX(-50%);
-}
-.marker-3 {
-  right: 15px;
   top: 50%;
-  transform: translateY(-50%);
-}
-.marker-6 {
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.marker-9 {
-  left: 15px;
-  top: 50%;
-  transform: translateY(-50%);
+  margin-left: -15px;
+  margin-top: -15px;
 }
 
 .controls {
