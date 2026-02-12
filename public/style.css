@@ -284,6 +284,38 @@ input[type="time"]:focus {
   line-height: 1.2;
 }
 
+.speak-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.speak-btn:hover {
+  background: var(--primary);
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+}
+
+.speak-btn:active {
+  transform: scale(0.95);
+}
+
+.speak-btn svg {
+  transition: transform 0.2s ease;
+}
+
+.speak-btn:hover svg {
+  transform: scale(1.1);
+}
+
 .reference-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

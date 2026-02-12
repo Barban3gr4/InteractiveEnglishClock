@@ -123,6 +123,29 @@ function capitalize(str) {
 
 timeInput.addEventListener("input", updateClock);
 
+// Speech Synthesis
+const speakBtn = document.getElementById("speakBtn");
+speakBtn.addEventListener("click", () => {
+  const text = `It's ${englishOutput.textContent}`;
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = "en-US";
+  utterance.rate = 0.9;
+  utterance.pitch = 1;
+  
+  // Highlight card during speech
+  const card = document.getElementById("translationResult");
+  card.style.borderColor = "var(--primary)";
+  card.style.boxShadow = "0 0 30px rgba(99, 102, 241, 0.2)";
+  
+  utterance.onend = () => {
+    card.style.borderColor = "rgba(255, 255, 255, 0.05)";
+    card.style.boxShadow = "0 20px 25px -5px rgba(0, 0, 0, 0.3)";
+  };
+
+  window.speechSynthesis.cancel(); // Cancel any ongoing speech
+  window.speechSynthesis.speak(utterance);
+});
+
 // Initialize
 updateClock();
 
